@@ -16,6 +16,7 @@
 - [Table of Contents](#table-of-contents)
 - [Requirements](#requirements)
 - [Installation](#installation)
+- [Card](#card)
 
 ## Requirements
 
@@ -68,3 +69,17 @@ Add your Netlify credentials to the config file. You can use environment variabl
 - `NETLIFY_SITE_ID`  
   This is the site you wish to deploy from the CMS.  
   You can find this under _Site Settings_, listed under _Site information_ as _API ID_.
+
+## Card
+
+If you want, you can use the card provided by this package to show the deploy status on your Nova dashboard.  
+Include the card in the `cards` array of your `NovaServiceProvider`:
+
+```php
+use Grrr\NetlifyDeploy\NetlifyDeployCard;
+
+protected function cards()
+{
+    return [new NetlifyDeployCard()];
+}
+```
