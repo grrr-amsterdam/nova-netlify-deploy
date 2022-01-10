@@ -14,5 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/status', [NetlifyDeployController::class, 'status']);
-Route::post('/deploy', [NetlifyDeployController::class, 'deploy']);
+Route::get("/status", [NetlifyDeployController::class, "status"]);
+Route::post("/deploy", [NetlifyDeployController::class, "deploy"]);

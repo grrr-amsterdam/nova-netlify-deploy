@@ -25,6 +25,6 @@ class NetlifyDeployTool extends Tool
      */
     public function renderNavigation()
     {
-        return view('netlify-deploy::navigation');
+        return view("netlify-deploy::navigation");
     }
 }

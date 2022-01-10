@@ -11,7 +11,7 @@ class NetlifyDeployCard extends Card
      *
      * @var string
      */
-    public $width = '1/3';
+    public $width = "1/3";
 
     /**
      * Get the component name for the element.
@@ -20,6 +20,6 @@ class NetlifyDeployCard extends Card
      */
     public function component()
     {
-        return 'netlify-deploy-card';
+        return "netlify-deploy-card";
     }
 }

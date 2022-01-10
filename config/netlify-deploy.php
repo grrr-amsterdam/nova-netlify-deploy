@@ -10,7 +10,7 @@ return [
     | Create a new token here: https://app.netlify.com/user/applications/personal
     |
     */
-    'access_token' => env('NETLIFY_ACCESS_TOKEN'),
+    "access_token" => env("NETLIFY_ACCESS_TOKEN"),
 
     /*
     |--------------------------------------------------------------------------
@@ -21,5 +21,5 @@ return [
     | You can find this under *Site Settings*, listed under *Site information* as *API ID*.
     |
     */
-    'site_id' => env('NETLIFY_SITE_ID'),
+    "site_id" => env("NETLIFY_SITE_ID"),
 ];

@@ -16,19 +16,19 @@ class NetlifyDeployServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'netlify-deploy');
+        $this->loadViewsFrom(__DIR__ . "/../resources/views", "netlify-deploy");
 
         $this->app->booted(function () {
             $this->routes();
         });
 
         Nova::serving(function (ServingNova $event) {
-            Nova::script('netlify-deploy', __DIR__ . '/../dist/js/tool.js');
+            Nova::script("netlify-deploy", __DIR__ . "/../dist/js/tool.js");
         });
 
         $this->publishes([
-            __DIR__ . '/../config/netlify-deploy.php' => config_path(
-                'netlify-deploy.php'
+            __DIR__ . "/../config/netlify-deploy.php" => config_path(
+                "netlify-deploy.php"
             ),
         ]);
     }
@@ -44,9 +44,9 @@ class NetlifyDeployServiceProvider extends ServiceProvider
             return;
         }
 
-        Route::middleware(['nova'])
-            ->prefix('nova-vendor/netlify-deploy')
-            ->group(__DIR__ . '/../routes/api.php');
+        Route::middleware(["nova"])
+            ->prefix("nova-vendor/netlify-deploy")
+            ->group(__DIR__ . "/../routes/api.php");
     }
 
     /**

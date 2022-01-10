@@ -12,10 +12,10 @@ class NetlifyDeployController
 
     public function __construct()
     {
-        $accessToken = config('netlify-deploy.access_token');
-        $siteId = config('netlify-deploy.site_id');
+        $accessToken = config("netlify-deploy.access_token");
+        $siteId = config("netlify-deploy.site_id");
         if (!$accessToken || !$siteId) {
-            throw new \Exception('Unable to read Netlify credentials.');
+            throw new \Exception("Unable to read Netlify credentials.");
         }
         $this->netlify = Http::withToken($accessToken);
         $this->siteId = $siteId;
@@ -33,7 +33,7 @@ class NetlifyDeployController
         );
 
         $productionDeploy = $deploys->first(
-            fn($deploy) => $deploy['context'] === 'production'
+            fn($deploy) => $deploy["context"] === "production"
         );
         return response()->json($productionDeploy);
     }

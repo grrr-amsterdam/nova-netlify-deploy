@@ -1,15 +1,15 @@
 <template>
-    <card class="flex flex-col items-center justify-center">
-        <netlify-deploy-status />
-    </card>
+  <card class="flex flex-col items-center justify-center">
+    <netlify-deploy-status />
+  </card>
 </template>
 
 <script>
 export default {
-    props: ["card"],
+  props: ["card"],
 
-    methods: {},
+  methods: {},
 
-    mounted() {},
+  mounted() {},
 };
 </script>
