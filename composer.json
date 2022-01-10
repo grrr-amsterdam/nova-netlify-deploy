@@ -1,5 +1,5 @@
 {
-  "name": "grrr-amsterdam/netlify-deploy",
+  "name": "grrr-amsterdam/nova-netlify-deploy",
   "description": "Deploy your Netlify sites from the Nova CMS.",
   "keywords": [
     "laravel",
