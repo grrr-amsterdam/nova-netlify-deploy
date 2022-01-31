@@ -42,9 +42,8 @@ export default {
   },
   methods: {
     onStatusLoaded(deployStatus) {
-      if (deployStatus.error_message) {
-        this.error = deployStatus.error_message;
-      }
+      this.error = deployStatus.error_message =
+        deployStatus.error_message || "";
       this.publishing = this.isPublishing(deployStatus.state);
     },
     publish() {
