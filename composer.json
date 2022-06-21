@@ -7,13 +7,20 @@
   ],
   "license": "MIT",
   "require": {
-    "php": ">=8.0"
+    "php": ">=8.0",
+    "laravel/nova": "^4.9"
   },
   "autoload": {
     "psr-4": {
       "Grrr\\NetlifyDeploy\\": "src/"
     }
   },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://nova.laravel.com"
+    }
+  ],
   "extra": {
     "laravel": {
       "providers": [
