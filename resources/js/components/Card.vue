@@ -1,15 +1,19 @@
 <template>
-  <card class="flex flex-col items-center justify-center">
-    <netlify-deploy-status />
-  </card>
+    <Card class="flex flex-col items-center justify-center">
+        <deploy-status />
+    </Card>
 </template>
 
 <script>
+import DeployStatus from "../components/DeployStatus.vue";
 export default {
-  props: ["card"],
+    components: {
+        DeployStatus,
+    },
+    props: ["card"],
 
-  methods: {},
-
-  mounted() {},
+    mounted() {
+        //
+    },
 };
 </script>

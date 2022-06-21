@@ -3,11 +3,12 @@
 namespace Grrr\NetlifyDeploy\Http\Controllers;
 
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Support\Facades\Http;
 
 class NetlifyDeployController
 {
-    private \Illuminate\Http\Client\PendingRequest $netlify;
+    private PendingRequest $netlify;
     private string $siteId;
 
     public function __construct()
