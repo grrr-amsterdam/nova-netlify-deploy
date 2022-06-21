@@ -2,9 +2,11 @@
 
 namespace Grrr\NetlifyDeploy;
 
+use Grrr\NetlifyDeploy\Http\Middleware\Authorize;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Nova\Events\ServingNova;
+use Laravel\Nova\Http\Middleware\Authenticate;
 use Laravel\Nova\Nova;
 
 class NetlifyDeployServiceProvider extends ServiceProvider
@@ -16,14 +18,15 @@ class NetlifyDeployServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__ . "/../resources/views", "netlify-deploy");
-
         $this->app->booted(function () {
             $this->routes();
         });
 
         Nova::serving(function (ServingNova $event) {
-            Nova::script("netlify-deploy", __DIR__ . "/../dist/js/tool.js");
+            Nova::script(
+                "netlify-deploy-card",
+                __DIR__ . "/../dist/js/card.js"
+            );
         });
 
         $this->publishes([
@@ -44,8 +47,13 @@ class NetlifyDeployServiceProvider extends ServiceProvider
             return;
         }
 
-        Route::middleware(["nova"])
-            ->prefix("nova-vendor/netlify-deploy")
+        Nova::router(
+            ["nova", Authenticate::class, Authorize::class],
+            "netlify-deploy-tool"
+        )->group(__DIR__ . "/../routes/inertia.php");
+
+        Route::middleware(["nova", Authorize::class])
+            ->prefix("nova-vendor/netlify-deploy-tool")
             ->group(__DIR__ . "/../routes/api.php");
     }
 
