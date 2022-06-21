@@ -1,21 +1,22 @@
 {
-  "private": true,
-  "scripts": {
-    "dev": "yarn development",
-    "development": "mix",
-    "watch": "mix watch",
-    "watch-poll": "mix watch -- --watch-options-poll=1000",
-    "hot": "mix watch --hot",
-    "prod": "yarn production",
-    "production": "mix --production"
-  },
-  "devDependencies": {
-    "@prettier/plugin-php": "^0.18.8",
-    "@vue/compiler-sfc": "^3.2.22",
-    "laravel-mix": "^6.0.41",
-    "postcss": "^8.3.11",
-    "prettier": "^2.7.1",
-    "vue-loader": "^16.8.3"
-  },
-  "dependencies": {}
+    "private": true,
+    "scripts": {
+        "dev": "yarn development",
+        "development": "mix",
+        "watch": "mix watch",
+        "watch-poll": "mix watch -- --watch-options-poll=1000",
+        "hot": "mix watch --hot",
+        "prod": "yarn production",
+        "production": "mix --production",
+        "nova:install": "yarn --cwd ./vendor/laravel/nova --frozen-lockfile"
+    },
+    "devDependencies": {
+        "@prettier/plugin-php": "^0.18.8",
+        "@vue/compiler-sfc": "^3.2.22",
+        "laravel-mix": "^6.0.41",
+        "postcss": "^8.3.11",
+        "prettier": "^2.7.1",
+        "vue-loader": "^16.8.3"
+    },
+    "dependencies": {}
 }

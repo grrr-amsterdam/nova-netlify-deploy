@@ -1,36 +1,36 @@
 {
-  "name": "grrr-amsterdam/nova-netlify-deploy",
-  "description": "Deploy your Netlify sites from the Nova CMS.",
-  "keywords": [
-    "laravel",
-    "nova"
-  ],
-  "license": "MIT",
-  "require": {
-    "php": ">=8.0",
-    "laravel/nova": "^4.9"
-  },
-  "autoload": {
-    "psr-4": {
-      "Grrr\\NetlifyDeploy\\": "src/"
-    }
-  },
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://nova.laravel.com"
-    }
-  ],
-  "extra": {
-    "laravel": {
-      "providers": [
-        "Grrr\\NetlifyDeploy\\NetlifyDeployServiceProvider"
-      ]
-    }
-  },
-  "config": {
-    "sort-packages": true
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true
+    "name": "grrr-amsterdam/nova-netlify-deploy",
+    "description": "Deploy your Netlify sites from the Nova CMS.",
+    "keywords": [
+        "laravel",
+        "nova"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=8.0",
+        "laravel/nova": "^4.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Grrr\\NetlifyDeploy\\": "src/"
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://nova.laravel.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Grrr\\NetlifyDeploy\\NetlifyDeployServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

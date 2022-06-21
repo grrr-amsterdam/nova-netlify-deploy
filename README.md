@@ -13,17 +13,17 @@
 
 ## Table of Contents
 
-- [Table of Contents](#table-of-contents)
-- [Requirements](#requirements)
-- [Installation](#installation)
-- [Card](#card)
+-   [Table of Contents](#table-of-contents)
+-   [Requirements](#requirements)
+-   [Installation](#installation)
+-   [Card](#card)
 
 ## Requirements
 
 [Return To Top](#nova-publish)
 
-- PHP 7.1
-- A Netlify account
+-   PHP 7.1
+-   A Netlify account
 
 ## Installation
 
@@ -63,12 +63,12 @@ php artisan vendor:publish --provider="Grrr\NetlifyDeploy\NetlifyDeployServicePr
 
 Add your Netlify credentials to the config file. You can use environment variables for this:
 
-- `NETLIFY_ACCESS_TOKEN`  
-  Used to connect with the Netlify API.  
-  Create a new token here: https://app.netlify.com/user/applications/personal
-- `NETLIFY_SITE_ID`  
-  This is the site you wish to deploy from the CMS.  
-  You can find this under _Site Settings_, listed under _Site information_ as _API ID_.
+-   `NETLIFY_ACCESS_TOKEN`  
+    Used to connect with the Netlify API.  
+    Create a new token here: https://app.netlify.com/user/applications/personal
+-   `NETLIFY_SITE_ID`  
+    This is the site you wish to deploy from the CMS.  
+    You can find this under _Site Settings_, listed under _Site information_ as _API ID_.
 
 ## Card
 
