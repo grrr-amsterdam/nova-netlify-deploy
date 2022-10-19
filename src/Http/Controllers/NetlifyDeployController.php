@@ -2,6 +2,7 @@
 
 namespace Grrr\NetlifyDeploy\Http\Controllers;
 
+use Grrr\NetlifyDeploy\Events\PublicationWasStarted;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Support\Facades\Http;
@@ -41,6 +42,7 @@ class NetlifyDeployController
 
     public function deploy(): JsonResponse
     {
+        event(new PublicationWasStarted());
         return response()->json(
             $this->netlify
                 ->post(
@@ -51,3 +53,4 @@ class NetlifyDeployController
         );
     }
 }
+

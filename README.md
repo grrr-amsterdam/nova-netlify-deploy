@@ -17,6 +17,7 @@
 -   [Requirements](#requirements)
 -   [Installation](#installation)
 -   [Card](#card)
+-   [Events](#events)
 
 ## Requirements
 
@@ -83,3 +84,8 @@ protected function cards()
     return [new NetlifyDeployCard()];
 }
 ```
+
+## Events
+
+This package broadcasts a `PublicationWasStarted` event right before the Netlify API has been instructed to create a new deploy.
+You can listen to this in your application if you have a need.
