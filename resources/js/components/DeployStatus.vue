@@ -107,9 +107,7 @@ export default {
             }).format(new Date(date));
         },
         isPublishing(state) {
-            return (
-                state === "building" || state === "new" || state === "enqueued"
-            );
+            return state !== "ready";
         },
     },
     data() {
