@@ -8,7 +8,7 @@
         Publication status
       </h2>
       <svg
-        v-if="deployStatus.state === 'ready'"
+        v-if="isReady(deployStatus.state)"
         class="fill-current icon-ok w-8 h-8 ml-2"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 512 512"
@@ -92,13 +92,16 @@ export default {
         });
     },
     getStatusDescription(state) {
-      if (state === "ready") {
+      if (this.isReady(state)) {
         return "Publication successful";
+      }
+      if (this.isFailed(state)) {
+        return "Publication failed";
       }
       if (this.isPublishing(state)) {
         return "Publication in progress";
       }
-      return "Publication failed";
+      return "Unknown state. This is a bug, please report it.";
     },
     formatDate(date) {
       return new Intl.DateTimeFormat("en-EN", {
@@ -107,7 +110,13 @@ export default {
       }).format(new Date(date));
     },
     isPublishing(state) {
-      return state !== "ready";
+      return !this.isFailed(state) && !this.isReady(state);
+    },
+    isFailed(state) {
+      return state === "error";
+    },
+    isReady(state) {
+      return state === "ready";
     },
   },
   data() {
