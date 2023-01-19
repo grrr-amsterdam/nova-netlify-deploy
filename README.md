@@ -23,7 +23,7 @@
 
 [Return To Top](#nova-publish)
 
--   PHP 7.1
+-   Laravel Nova
 -   A Netlify account
 
 ## Installation
@@ -35,6 +35,8 @@ Install package
 ```shell script
 composer require grrr/nova-netlify-deploy
 ```
+
+For older Nova use `grrr/nova-netlify-deploy:^1.0`.
 
 Load the tool by adding it to `NovaServiceProvider.php`
 
