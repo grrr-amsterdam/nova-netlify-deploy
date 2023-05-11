@@ -1,8 +1,11 @@
 <template>
+    <Head title="Publish a new Netlify build" />
     <div>
-        <Card>
-            <deploy-status @load="onStatusLoaded" />
-        </Card>
+        <div class="mb-6 w-60">
+            <Card>
+                <deploy-status @load="onStatusLoaded" />
+            </Card>
+        </div>
         <p class="mb-6" v-if="error">
             Error: <strong>{{ error }}</strong>
         </p>
@@ -12,14 +15,9 @@
             to the public.
         </p>
 
-        <button
-            v-on:click="publish()"
-            :disabled="!!publishing"
-            z
-            class="btn btn-default btn-primary mb-6"
-        >
+        <default-button @click="publish()" :disabled="!!publishing">
             Publish website
-        </button>
+        </default-button>
     </div>
 </template>
 
@@ -31,11 +29,6 @@ export default {
         DeployStatus,
     },
     mounted() {},
-    metaInfo() {
-        return {
-            title: "Publish a new Netlify build",
-        };
-    },
     data() {
         return {
             error: "",
