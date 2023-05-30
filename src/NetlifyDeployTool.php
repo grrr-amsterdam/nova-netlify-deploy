@@ -27,8 +27,8 @@ class NetlifyDeployTool extends Tool
      */
     public function menu(Request $request)
     {
-        return MenuSection::make("Netlify Deploy Tool")
+        return MenuSection::make("Publish website")
             ->path("/netlify-deploy-tool")
-            ->icon("server");
+            ->icon("paper-airplane");
     }
 }
