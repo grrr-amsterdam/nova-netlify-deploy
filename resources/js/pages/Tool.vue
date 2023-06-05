@@ -1,6 +1,6 @@
 <template>
-    <Head title="Publish a new Netlify build" />
     <div>
+        <Head title="Publish a new Netlify build" />
         <div class="mb-6 w-60">
             <Card>
                 <deploy-status @load="onStatusLoaded" />
